@@ -39,10 +39,6 @@ ul {
     list-style: none;
 }
 
-body {
-    background-color: black;
-}
-
 .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -73,6 +69,55 @@ body {
 }
 
 /* End Global Rules */
+
+/* start component */
+
+.main-heading{
+text-align: center;
+}
+
+.main-heading h2{
+font-family: var(--regular-font);
+font-weight: normal;
+font-size: 2.5rem;
+margin-bottom: 4.3rem;
+text-transform: uppercase;
+position: relative;
+}
+
+.main-heading h2::before{
+    background-color: #333; 
+    bottom: -30px;
+    content: '';
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 7.5rem;
+}
+
+.main-heading h2::after{
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid #333;
+    bottom: -38px;
+    position: absolute;
+    content: '';
+    height: .8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: .8rem;
+}
+
+.main-heading p{
+    color: #777;
+    line-height: 2;
+    max-width: 100%;
+    margin: 0 auto 100px;
+    width: 34rem;
+}
+
+/* End component */
 
 /* Start Header */
 header {
@@ -287,3 +332,4 @@ header nav .form i {
 }
 
 /* End Landing  */
+
