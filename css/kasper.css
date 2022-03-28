@@ -1,4 +1,5 @@
 /* Start Fonts */
+
 @font-face {
     font-family: Regular;
     src: url(../fonts/OpenSans-Regular.ttf);
@@ -12,23 +13,33 @@
 /* End Fonts */
 
 /* Start Variables */
+
 :root {
-    --regular-font: Regular;
+    /* Font */
     --bold-font: Bold;
+    --regular-font: Regular;
+    /* Colors */
+    --default-color: #333;
     --main-color: #19c8fa;
+    --paragragh-color: #777;
     --second-color: #fff;
     --transparent-color: rgb(15 116 143 / 70%);
+    /* Spaces */
+    --paragragh-line-leight: 2;
+    --section-padding: 100px;
 }
 
 /* End Variables */
 
 /* Start Global Rules */
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
+
 }
 
 html {
@@ -40,11 +51,11 @@ ul {
 }
 
 .container {
-    padding-left: 15px;
-    padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
     min-height: 97px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /* Small */
@@ -72,21 +83,22 @@ ul {
 
 /* start component */
 
-.main-heading{
-text-align: center;
+.main-heading {
+    text-align: center;
 }
 
-.main-heading h2{
-font-family: var(--regular-font);
-font-weight: normal;
-font-size: 2.5rem;
-margin-bottom: 4.3rem;
-text-transform: uppercase;
-position: relative;
+.main-heading h2 {
+    color: var(--default-color);
+    font-family: var(--regular-font);
+    font-weight: normal;
+    font-size: 2.5rem;
+    margin-bottom: 4.3rem;
+    text-transform: uppercase;
+    position: relative;
 }
 
-.main-heading h2::before{
-    background-color: #333; 
+.main-heading h2::before {
+    background-color: var(--default-color);
     bottom: -30px;
     content: '';
     height: 2px;
@@ -96,10 +108,10 @@ position: relative;
     width: 7.5rem;
 }
 
-.main-heading h2::after{
+.main-heading h2::after {
     background-color: white;
     border-radius: 50%;
-    border: 2px solid #333;
+    border: 2px solid var(--default-color);
     bottom: -38px;
     position: absolute;
     content: '';
@@ -109,9 +121,9 @@ position: relative;
     width: .8rem;
 }
 
-.main-heading p{
-    color: #777;
-    line-height: 2;
+.main-heading p {
+    color: var(--paragragh-color);
+    line-height: var(--paragragh-line-leight);
     max-width: 100%;
     margin: 0 auto 100px;
     width: 34rem;
@@ -120,6 +132,7 @@ position: relative;
 /* End component */
 
 /* Start Header */
+
 header {
     position: absolute;
     left: 0;
@@ -248,16 +261,16 @@ header nav .form i {
 }
 
 .landing .text {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50%;
-    padding: 50px;
     background-color: var(--transparent-color);
     color: var(--second-color);
     display: flex;
     justify-content: flex-end;
+    left: 0;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
 }
 
 .landing .text .content {
@@ -276,24 +289,25 @@ header nav .form i {
 }
 
 .landing .text .content h2 {
+    font-family: var(--regular-font);
     font-size: 1.4rem;
     font-weight: normal;
-    font-family: var(--regular-font);
     line-height: 1.5;
     margin-bottom: 20px;
 }
 
 .landing .text .content p {
-    font-size: .9rem;
-    line-height: 2;
     font-family: var(--regular-font);
+    font-size: .9rem;
+    line-height: var(--paragragh-line-leight);
 }
 
 .landing .change-background {
+    color: #ddd;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: #ddd;
+
 }
 
 @media (max-width:767px) {
@@ -311,19 +325,19 @@ header nav .form i {
 }
 
 .landing .bullets {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     bottom: 30px;
     display: flex;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
 }
 
 .landing .bullets li {
-    width: 20px;
-    height: 20px;
     border: 1px solid var(--second-color);
     border-radius: 50%;
+    height: 20px;
     margin-right: 10px;
+    width: 20px;
 }
 
 .landing .bullets li.active {
@@ -333,3 +347,52 @@ header nav .form i {
 
 /* End Landing  */
 
+/* Start Services */
+
+.services {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+@media (min-width:768px) {
+    .services .services-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        grid-column-gap: 2.5rem;
+        grid-row-gap: 2.5rem;
+    }
+}
+
+.services .srv-box {
+    display: flex;
+}
+
+.services .srv-box i {
+    color: var(--default-color);
+    margin-right: 3.1rem;
+}
+
+@media (max-width: 767px) {
+    .services .srv-box {
+        flex-direction: column;
+        margin-bottom: 2.5rem;
+        text-align: center;
+    }
+
+    .services .srv-box i {
+        margin: 0 0 1.8rem;
+    }
+
+}
+
+.services .srv-box .text h3 {
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.services .srv-box p {
+    color: var(--paragragh-color);
+    line-height: 2;
+}
+
+/* End Services */
