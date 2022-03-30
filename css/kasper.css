@@ -46,6 +46,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-family: var(--regular-font);
+}
+
 ul {
     list-style: none;
 }
@@ -89,12 +93,11 @@ ul {
 
 .main-heading h2 {
     color: var(--default-color);
-    font-family: var(--regular-font);
     font-weight: normal;
     font-size: 2.5rem;
     margin-bottom: 4.3rem;
-    text-transform: uppercase;
     position: relative;
+    text-transform: uppercase;
 }
 
 .main-heading h2::before {
@@ -149,12 +152,12 @@ header .container {
 
 header .container::after {
     content: "";
+    background-color: #a2a2a2;
+    bottom: 0;
+    height: 1px;
+    left: 15px;
     position: absolute;
     width: calc(100% - 30px);
-    height: 1px;
-    bottom: 0;
-    left: 15px;
-    background-color: #a2a2a2;
 }
 
 header .logo img {
@@ -189,13 +192,13 @@ header nav ul {
     }
 
     header nav .toggle-menue:hover+ul {
+        background-color: rgba(0, 0, 0, 0.5);
         display: flex;
         flex-direction: column;
-        position: absolute;
-        width: 100%;
-        top: 100%;
         left: 0;
-        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 100%;
+        width: 100%;
     }
 
     header nav ul li a {
@@ -204,15 +207,14 @@ header nav ul {
 }
 
 header nav ul li a {
+    color: var(--second-color);
     display: block;
     padding: 40px 10px;
-    color: var(--second-color);
+    font-size: 0.9rem;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: var(--regular-font);
-    font-size: 0.9rem;
-    transition: 0.3s;
     position: relative;
+    transition: 0.3s;
     z-index: 2;
 }
 
@@ -223,20 +225,20 @@ header nav ul li a:hover {
 }
 
 header nav .form {
-    width: 40px;
-    height: 30px;
-    position: relative;
-    margin-left: 30px;
     border-left: 1px solid var(--second-color);
+    height: 30px;
+    width: 40px;
+    margin-left: 30px;
+    position: relative;
 }
 
 header nav .form i {
     color: var(--second-color);
+    font-size: 1rem;
     position: absolute;
+    right: 5px;
     top: 50%;
     transform: translateY(-50%);
-    right: 5px;
-    font-size: 1rem;
 }
 
 /* End Header */
@@ -244,20 +246,21 @@ header nav .form i {
 /* Start Landing */
 
 .landing {
-    min-height: 100vh;
+
     background-image: url(../images/landing_img.jpg);
     background-size: cover;
     background-color: #1f2021;
+    min-height: 100vh;
     position: relative;
 }
 
 .landing .overlay {
-    position: absolute;
+    background-color: rgb(0 0 0 / 60%);
+    height: 100%;
+    width: 100%;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0 0 0 / 60%);
+    position: absolute;
 }
 
 .landing .text {
@@ -297,7 +300,6 @@ header nav .form i {
 }
 
 .landing .text .content p {
-    font-family: var(--regular-font);
     font-size: .9rem;
     line-height: var(--paragragh-line-leight);
 }
@@ -327,8 +329,8 @@ header nav .form i {
 .landing .bullets {
     bottom: 30px;
     display: flex;
-    left: 50%;
     position: absolute;
+    left: 50%;
     transform: translateX(-50%);
 }
 
@@ -336,8 +338,8 @@ header nav .form i {
     border: 1px solid var(--second-color);
     border-radius: 50%;
     height: 20px;
-    margin-right: 10px;
     width: 20px;
+    margin-right: 10px;
 }
 
 .landing .bullets li.active {
@@ -396,3 +398,77 @@ header nav .form i {
 }
 
 /* End Services */
+
+/* Start Design Section */
+
+.design {
+    background-image: url(../images/design_background.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    height: 37rem;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    position: relative;
+    overflow: hidden;
+}
+
+.design::before {
+    content: '';
+    position: absolute;
+    background-color: rgb(0 0 0 / 60%);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.design .image,
+.design .text {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.design .image {
+    text-align: center;
+}
+
+@media (max-width:767px) {
+    .design .image {
+        display: none;
+    }
+}
+
+.design .image img {
+    position: relative;
+    bottom: -9.3rem;
+}
+
+.design .text {
+    color: var(--second-color);
+    padding: 3.25rem;
+    background-color: var(--transparent-color);
+}
+
+.design .text h2 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.design .text ul li {
+    padding: .9rem 0;
+}
+
+.design .text ul li::before {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f108';
+    font-weight: 900;
+    margin-right: .9rem;
+    position: relative;
+    top: .1rem;
+}
+
+/* End Design Section */
