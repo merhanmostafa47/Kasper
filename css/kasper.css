@@ -896,3 +896,127 @@ header nav .form i {
 }
 
 /* End Quote */
+
+/* Start Pricing */
+.pricing {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.pricing .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.pricing .plans .plan {
+    background-color: #fcfcfc;
+    text-align: center;
+}
+
+.pricing .plans .plan .head {
+    padding: 40px 20px;
+    border-top: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+.pricing .plans .plan .head h3 {
+    font-weight: normal;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.pricing .plans .plan .head span {
+    font-size: 3rem;
+    font-family: 'bold';
+}
+
+.pricing .plans .plan .head span::before {
+    content: "$";
+    position: relative;
+    font-size: 1.3rem;
+    font-family: 'regular';
+    top: -40px;
+}
+
+.pricing .plans .plan .head span::after {
+    content: "/Mo";
+    position: absolute;
+    font-size: 1.3rem;
+    position: relative;
+    right: -15px;
+}
+
+.pricing .plans .plan ul {
+    border-bottom: 1px solid var(--main-color);
+}
+
+.pricing .plans .plan ul li {
+    padding: 20PX;
+    position: relative;
+}
+
+.pricing .plans .plan ul li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    background-color: var(--main-color);
+}
+
+.pricing .plans .plan .foot a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    width: fit-content;
+    margin: 30px auto;
+}
+
+.pricing .contact-text {
+    text-align: center;
+    margin: 50px auto 20px;
+    font-size: 1.25rem;
+}
+
+.pricing .contact-link {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 15px 30px;
+    text-decoration: none;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    cursor: pointer;
+    transition: color .4s linear;
+    position: relative;
+}
+
+.pricing .contact-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--main-color);
+    z-index: -1;
+    transition: transform .5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(.5, 1.6, .4, .7);
+    transform: scaleX(0);
+}
+
+.pricing .contact-link:hover {
+    color: var(--second-color);
+}
+
+.pricing .contact-link:hover::before {
+    transform: scaleX(1);
+}
+
+/* End Pricing */
